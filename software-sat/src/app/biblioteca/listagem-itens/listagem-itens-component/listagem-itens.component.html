@@ -1,0 +1,26 @@
+
+<div class="header-container">
+    <h1>SatProducts</h1>
+    <div class="buttons-container">
+      <button class="header-button" (click)="redirecionarParaHome()">Ir para a Página Inicial</button>
+      <button class="header-button" (click)="redirecionarParaCriarProdutos()">Criar Produtos</button>
+    </div>
+  </div>
+<main>
+  <h1>Vitrine dos itens</h1>
+  <div class="container">
+
+      <!-- Produto vindo do back -->
+      <div *ngFor="let item of itensLibrary" class="card">
+        <div class="icon-container">
+            <i class="fas fa-edit" title="Editar" (click)="putItem(item?.id)">✏️</i>
+            <i class="fas fa-trash-alt" title="Excluir" (click)="deleteItem(item?.id)">🗑️</i>
+        </div>
+        <div class="card-content">
+            <h2>{{item?.name}}</h2>
+            <p>{{item?.description}}</p>
+            <span>{{item?.category}}</span>
+        </div>
+    </div>
+  </div>
+</main>

@@ -1,18 +1,20 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './biblioteca/home/home-component/home.component';
-import { CriacaoItensComponent } from './biblioteca/criacao-itens/criacao-itens-component/criacao-itens.component';
-import { ListagemItensComponent } from './biblioteca/listagem-itens/listagem-itens-component/listagem-itens.component';
+import { HomeComponent } from './tasks/home/home-component/home.component';
+import { CreateTaskComponent } from './tasks/create-task/criacao-itens-component/create-task.component';
+import { TasksListComponent } from './tasks/tasks-list/tasks-list-component/tasks-list.component';
 
-export const routes: Routes = [   { path: '', redirectTo: '/home', pathMatch: 'full' },
-{
-    path: "home",
-    component: HomeComponent,
-},
-{
-    path: "create-product",
-    component: CriacaoItensComponent
-},
-{
-    path: "get-itens",
-    component: ListagemItensComponent
-}];
+export const routes: Routes = [   
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    {
+        path: "home",
+        component: HomeComponent,
+    },
+    {
+        path: "create-task",
+        component: CreateTaskComponent
+    },
+    {
+        path: "get-tasks",
+        component: TasksListComponent
+    }
+];

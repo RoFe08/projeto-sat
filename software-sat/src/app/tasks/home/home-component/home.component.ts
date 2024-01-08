@@ -7,20 +7,18 @@ import { Router } from '@angular/router';
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-    constructor(private router: Router) {
-        console.log('HomeComponent loaded');
-    }
+    constructor(
+      private router: Router
+    ) {}
 
-    ngOnInit() {
-       
-    }
+    ngOnInit(): void {}
 
-    redirectToCreateProducts() {
-        this.router.navigate(['/create-product']);
+    goCreateTask(): void {
+        this.router.navigate(['/create-task']);
       }
 
-      redirectToSeeProducts() {
-        this.router.navigate(['/get-itens']);
+      goTasks(): void {
+        this.router.navigate(['/get-tasks']);
       }
 
 }

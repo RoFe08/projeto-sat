@@ -1,16 +1,15 @@
 
+<ngx-spinner></ngx-spinner>
 <div class="header-container">
-    <h1>SatProducts</h1>
+    <h1>SAT - Tarefas</h1>
     <div class="buttons-container">
-      <button class="header-button" (click)="redirecionarParaHome()">Ir para a Página Inicial</button>
-      <button class="header-button" (click)="redirecionarParaCriarProdutos()">Criar Produtos</button>
+      <button class="header-button" (click)="goHome()">Ir para a Página Inicial</button>
+      <button class="header-button" (click)="goCreateTask()">Criar Tarefa</button>
     </div>
   </div>
 <main>
-  <h1>Vitrine dos itens</h1>
+  <h1>Todas as Tarefas</h1>
   <div class="container">
-
-      <!-- Produto vindo do back -->
       <div *ngFor="let item of itensLibrary" class="card">
         <div class="icon-container">
             <i class="fas fa-edit" title="Editar" (click)="putItem(item?.id)">✏️</i>

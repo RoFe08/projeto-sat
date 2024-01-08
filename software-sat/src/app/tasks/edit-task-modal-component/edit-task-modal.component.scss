@@ -1,13 +1,27 @@
-.modal-header {
-  width: 60%;
-  max-width: 400px;
-  margin: auto;
+.modal-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  width: 25%;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
   border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  flex-direction: column;
+  background-color: #333;
+  color: #fff;
+}
+
+.modal-header {
+  text-align: center;
+  width: 60%;
+  max-width: 400px;
+  color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 15px;
@@ -27,7 +41,7 @@ label {
 }
 
 input {
-  width: 100%;
+  width: calc(100% - 16px);
   padding: 8px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -37,7 +51,6 @@ input {
 
 .modal-footer {
   padding: 15px;
-  background-color: #f8f9fa;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   margin-top: 10px;
@@ -63,4 +76,10 @@ input {
 
 .btn-secondary:hover {
   background-color: #5a6268;
+}
+
+@media(max-width: 768px){
+  .modal-container{
+    width: 70%;
+  }
 }

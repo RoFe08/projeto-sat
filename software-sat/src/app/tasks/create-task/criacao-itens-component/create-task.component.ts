@@ -8,12 +8,12 @@ import { NgxSpinnerService } from 'ngx-spinner';
 
 
 @Component({
-    selector: 'app-criacao-itens',
-    templateUrl: './criacao-itens.component.html',
-    styleUrls: ['./criacao-itens.component.scss']
+    selector: 'app-create-task',
+    templateUrl: './create-task.component.html',
+    styleUrls: ['./create-task.component.scss']
 })
 
-export class CriacaoItensComponent implements OnInit {
+export class CreateTaskComponent implements OnInit {
     
     form!: FormGroup;
 
@@ -26,11 +26,11 @@ export class CriacaoItensComponent implements OnInit {
         ) {
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.initForm()
     }
 
-    private initForm() {
+    private initForm(): void {
         this.form = this.formBuilder.group({
             name: ["", [Validators.required]],
             description: ["", [Validators.required]],
@@ -38,9 +38,7 @@ export class CriacaoItensComponent implements OnInit {
         })
     }
 
-
-
-    public createItem(){
+    public createItem(): void{
         const filtro = {
             name: this.form.controls.name.value,
             description: this.form.controls.description.value,
@@ -48,19 +46,19 @@ export class CriacaoItensComponent implements OnInit {
             id:  this.appModule.generateUniqueId()
         }
         this.spinner.show()
-        this.bibliotecaService.criarProdutos(filtro).pipe(finalize(() => {
+        this.bibliotecaService.createTask(filtro).pipe(finalize(() => {
             this.spinner.hide()
-            this.redirecionarParaVerProdutos()
+            this.goTasks()
           })).subscribe()
         
     }
 
-    redirecionarParaVerProdutos() {
-        this.router.navigate(['/get-itens']);
-      }
+    goTasks(): void {
+        this.router.navigate(['/get-tasks']);
+    }
 
-      redirecionarParaHome() {
+    goHome(): void {
         this.router.navigate(['/home']);
-      }
+    }
     
 }
